@@ -1,0 +1,2 @@
+# SupportBee
+Ticket managing API
