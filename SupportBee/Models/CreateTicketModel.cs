@@ -8,6 +8,7 @@ namespace SupportBee.Models
 {
     public class CreateTicketModel
     {
+
         public string Subject { get; set; }
 
         public string Text { get; set; }

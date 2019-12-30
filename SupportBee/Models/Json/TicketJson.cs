@@ -36,6 +36,9 @@ namespace SupportBee.Models.Json
         [JsonProperty("spam")]
         public bool isSpam { get; set; }
 
+        [JsonProperty("starred")]
+        public bool isStarred { get; set; }
+
         [JsonProperty("summary")]
         public string Summary { get; set; }
 

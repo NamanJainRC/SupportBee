@@ -1,4 +1,4 @@
-﻿@model SupportBee.Models.CreateTicketModel
+﻿@model SupportBee.Models.ShowTicketModel
 
 @{
     ViewBag.Title = "CreateTicket";
@@ -68,20 +68,20 @@
                 var text = $('#Text').val();
                 var name = $('#RequestorName').val();
                 var email = $('#RequestorEmail').val();
-                var object= {
-                        ticket:{
-                            subject: subject,
-                            requester_name: name,
-                            requester_email: email,
-                      
+                var object = {
+                    ticket: {
+                        subject: subject,
+                        requester_name: name,
+                        requester_email: email,
+
                         content: {
-                                text: text
-                            }
+                            text: text
                         }
+                    }
                 }
                 console.log(object);
                 object = JSON.stringify(object);
-                 console.log(object);
+                console.log(object);
                 console.log(subject);
                 console.log(text);
                 console.log(name);
@@ -95,7 +95,7 @@
                 $.ajax({
                     type: 'POST',
                     url: 'https://beemvcwebticketapp.supportbee.com/tickets',
-                    
+
                     contentType: 'application/json',
                     data: object,
                     success: function (response) {
@@ -105,25 +105,33 @@
                         console.log(response);
                     }
 
-                    //}).done(function (data) {
-                    //    console.log(data);
-                    //    $.ajax({
-                    //        type: 'POST',
-                    //        url: '/Ticket/ViewTickets',
-                    //        contentType: 'application/json',
-                    //        data: data.tickets,
-
-                    //        success: function (data) {
-
-                    //        },
-                    //        error: function (e) {
-
-                    //        }
-                    //    });
-
-                });
+                }).done;
             });
-                //});
-
     </script>
+
+
+
+
+
+
+
+    }).done(function (data) {
+                         console.log(data);
+                         $.ajax({
+                             type: 'POST',
+                              url: '/Ticket/ViewTickets',
+                             contentType: 'application/json',
+                              data: data.tickets,
+
+                              success: function (data) {
+
+                              },
+                             error: function (e) {
+
+                               }
+                           });
+
+                  });
+
+
 }

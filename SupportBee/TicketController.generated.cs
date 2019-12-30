@@ -59,12 +59,6 @@ namespace SupportBee.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult ViewTickets()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ViewTickets);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public TicketController Actions { get { return MVC.Ticket; } }
@@ -82,25 +76,15 @@ namespace SupportBee.Controllers
         public class ActionNamesClass
         {
             public readonly string CreateTicket = "CreateTicket";
-            public readonly string ViewTickets = "ViewTickets";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string CreateTicket = "CreateTicket";
-            public const string ViewTickets = "ViewTickets";
         }
 
 
-        static readonly ActionParamsClass_ViewTickets s_params_ViewTickets = new ActionParamsClass_ViewTickets();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_ViewTickets ViewTicketsParams { get { return s_params_ViewTickets; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_ViewTickets
-        {
-            public readonly string jsonstr = "jsonstr";
-        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -111,13 +95,13 @@ namespace SupportBee.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string _ViewTickets = "_ViewTickets";
                 public readonly string CreateTicket = "CreateTicket";
                 public readonly string Index = "Index";
+                public readonly string ViewTickets = "ViewTickets";
             }
-            public readonly string _ViewTickets = "~/Views/Ticket/_ViewTickets.cshtml";
             public readonly string CreateTicket = "~/Views/Ticket/CreateTicket.cshtml";
             public readonly string Index = "~/Views/Ticket/Index.cshtml";
+            public readonly string ViewTickets = "~/Views/Ticket/ViewTickets.cshtml";
         }
     }
 
@@ -134,18 +118,6 @@ namespace SupportBee.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreateTicket);
             CreateTicketOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ViewTicketsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string jsonstr);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult ViewTickets(string jsonstr)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ViewTickets);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "jsonstr", jsonstr);
-            ViewTicketsOverride(callInfo, jsonstr);
             return callInfo;
         }
 

@@ -16,7 +16,7 @@ namespace SupportBee
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Ticket", action = "CreateTicket", id = UrlParameter.Optional }
+                defaults: new { controller = "Ticket", action = "ViewTickets", id = UrlParameter.Optional }
             );
         }
     }
